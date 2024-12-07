@@ -1,0 +1,376 @@
+:root{
+    --Yellow: #ffc800;
+    --Yellow-hover: #d9aa00;
+    --card-hover: #e6b400;
+    --White: #ffffff;
+    --navColor: #212529;
+    --btnColor: #9a9c9e;
+    --prt-bg: #f8f9fa;
+    --img-brd: #e9ecef;
+    --Icon-bg: #212529;
+}
+*{
+    box-sizing: border-box;
+    margin: 0;  
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+body{ 
+    width: 100vw;   
+    background-image: url(../assets/img/header-bg.jpg);
+    background-size: 100vw 95vh;
+    background-repeat: no-repeat;
+    background-position: top top;
+}
+/* start Navigation */
+.navbar{
+    transition: .5s;
+}
+.navbar .nav-list{
+    flex-grow: 0 !important;
+    letter-spacing: 1px;
+    font-weight: 300; 
+}
+.navbar-brand {
+    width: 14rem;
+}
+.nav-link {
+    color: var(--White) !important;
+    text-transform: uppercase;
+}
+.nav-link:hover{
+    color: var(--Yellow)!important;
+}
+.navbar-toggler{
+  display:  none !important;
+}
+@media screen and (max-width: 992px){
+    
+}
+@media screen and (max-width: 768px){
+    .navbar-brand {
+        width: 10rem;
+    }
+}
+@media screen and (max-width: 576px){
+  .navbar-toggler{
+    display:  inline-block;
+  }
+}
+.navbar .navbar-toggler{
+    border: 1px solid var(--btnColor);
+    color: var(--btnColor);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+}
+.navbar .navbar-toggler p{
+    margin-bottom: 0;
+    font-weight: 700;
+    font-size: 1rem;
+}
+@media screen and (max-width: 300px){
+    .navbar .navbar-toggler p{
+        display: none;
+    }
+}
+
+/* end Navigation */
+/* start Mast Header */
+ .Mast-header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    color: var(--White);
+ }
+.btn-xl{
+    padding: 1.2rem 2.5rem !important;
+    font-weight: 900 !important;
+    font-size: 1.2rem !important;
+    background: var(--Yellow) !important;
+    border-color: var(--Yellow) !important;
+ }
+ .btn-xl:hover{
+     background: var(--Yellow-hover) !important;
+     border-color: var(--Yellow) !important;
+ }
+ .Mast-header h1{
+    font-size: 4.5rem;
+    font-weight: 700;
+    word-spacing: 6px;
+    cursor: default;
+}
+.Mast-header p{
+    cursor: default;
+    font-family: serif;
+    font-size: 2rem;
+ }
+/* end Mast Header */
+/* start section services */
+section{
+   padding: 12vh 0;
+   width: 100vw;
+   margin-top: 3vh;
+}
+section h1{
+    font-size: 3rem;
+    font-weight: 700;
+}
+section p{
+    font-family: serif; 
+}
+section h3{
+    font-weight:700;
+}
+#Services div .commerce svg{
+    height: 5em;
+    width: 5.25em;
+    background: var(--Yellow);
+    color: var(--White);
+    border-radius: 50%;
+    padding: 1.5rem;
+    font-size: .9rem;
+}
+@media screen and (max-width: 768px){
+    section{
+        padding: 10vh 0;
+        margin-top: 0;
+     }
+}
+/* end section services */
+/* start section Portfolio */
+#Portfolio{
+    background: var(--prt-bg);
+}
+#Portfolio div .card{
+    padding-left: 0;
+    padding-right: 0;  
+}
+
+#Portfolio div .card .box-img{
+   position: relative;
+}
+
+#Portfolio div .card .box-img a{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    background: var(--Yellow);
+    width: 100%;
+    height: 100%;
+    opacity: .9;
+    display: none;
+}
+#Portfolio div .card .box-img img:hover ~ a,
+#Portfolio div .card .box-img a:hover{
+    display: flex;
+}
+#Portfolio div .card .box-img a svg{
+    width: 4rem;
+    height: 4rem;
+    color: var(--White);
+}
+/* end section Portfolio */
+/* start section About */
+#About .container div .box img,
+.end-img{
+    width: 11rem;
+    height: 11rem;
+    border: 7px solid var(--img-brd);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+
+}
+#About .container div .box .txt{
+    width: 40%;
+}
+.inverse{
+    flex-direction: row-reverse;
+    align-self: flex-end;
+}
+.pbox{
+    position: relative;
+}
+.pbox::before{
+    content: "";
+    background: var(--img-brd);
+    width: 2px;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    height: 100%;
+    transform: translateX(-50%);
+    z-index: -1;
+}
+#About .container div .end-img{
+    background: var(--Yellow);
+}
+#About .container div .end-img h5{
+    color: var(--White);
+    width: 5rem;
+    font-weight: 700;
+}
+@media screen and (max-width: 992px){
+    #About .container div .box img,
+    .end-img{
+        width: 8rem;
+        height: 8rem;
+    }
+}
+@media screen and (max-width: 786px){
+    #About .container div .box img,
+    .end-img,
+    .pbox::before{
+        left: 10%;
+    }
+    
+    #About .container div .box{
+        justify-content: center !important;
+    }
+    #About .container div .box .txt{
+        width: 40%;
+        text-align: start !important;
+    }
+}
+
+@media screen and (max-width: 576px){
+    #About .container div .box img,
+    .end-img,
+    .pbox::before{
+        left: 15%;
+    }
+    #About .container div .box .txt{
+        margin-left: 15%;
+    }
+}
+@media screen and (max-width: 400px){
+    #About .container div .box img,
+    .end-img,
+    .pbox::before{
+        left: 20%;
+    }
+    #About .container div .box .txt{
+        margin-left: 25%;
+    }
+}
+/* end section About */
+/* start section Team */
+#Team{
+    margin-top: 15vh;
+    background: var(--prt-bg);
+}
+#Team .container .card{
+    border: none;
+    background: inherit;
+   
+}
+#Team .container img{
+    border: 10px solid var(--img-brd);
+    width: 15rem;
+    height: 15rem;
+}
+.container .icon{
+    width: 100%;
+    color: var(--White);
+    
+}
+.container .icon svg{
+    background: var(--Icon-bg);
+    width: 14px;
+    height: 14px;
+    padding: 14px;
+    cursor: pointer;
+}
+@media screen and (max-width: 992px) and (min-width: 576px){
+    #Team .container .card{
+        width: 15rem !important;
+    }
+    .container .icon svg{
+        width: 12px;
+        height: 12px;
+        padding: 12px;
+    }
+    .container img{
+        width: 12rem;
+        height: 12rem;
+    }
+}
+
+/* end section Team */
+/* start aside */
+aside{
+    width: 100%;
+    min-height: 20vh;
+    display: flex;
+    align-items: center;
+}
+aside ul{
+    list-style: none;
+    justify-content: space-between;
+    align-items: center;
+}
+aside ul li{
+   cursor: pointer;
+}
+@media screen and (max-width: 576px){
+    aside ul li{
+       display: flex;
+       justify-content: center;
+       align-items: center;
+    }
+    aside  img{
+       width: 10rem;
+    }
+}
+/* end aside */
+
+/* start section Contact */
+#Contact{
+    background: #212529;
+    background-image: url("../assets/img/map-image.png");
+    background-size: cover;
+    min-height: 85vh;
+}
+#Contact h1
+{
+    color: var(--White) !important;
+}
+#Contact p{
+    color: #6c757d !important;
+    margin-bottom: 4rem;
+}
+
+#Contact .left-form .form-control{
+    padding: 1.325rem .75rem;
+    font-weight: 500;
+}
+::placeholder {
+    opacity: .3 !important;
+    font-weight: 700;
+    font-size: 1.2rem !important;
+}
+.form-control:focus {
+    border-color: var(--Yellow-hover) !important;
+    box-shadow: 0 0 0 0 var(--Yellow-hover) !important;
+}
+#Contact .btn-xl{
+    opacity: .5;
+}
+/* end section Contact */
+/* start Footer */
+/* .foot{
+    display: flex;
+    align-items: center;
+    min-height: 10vh;
+}
+.foot a{
+    text-decoration: none;
+    color: var(--bs-black);
+    word-spacing: -3px;
+}  */
+/* end Footer */
